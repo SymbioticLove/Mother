@@ -1,4 +1,4 @@
-Welcome to my ongoing project to create THE definitive text adventure. With hand-drawn stylings, music composed, played and recorded by us, authentic and deep sound design as well as a brilliant interactive story.
+Welcome to our ongoing project to create THE definitive text adventure. With hand-drawn stylings, music composed, played and recorded by us, authentic and deep sound design as well as a brilliant interactive story.
 
 Currently, the only output is to the cmd prompt opened with the game. You will need to type commands into the console in the game, and the results will be printed to the external cmd prompt. This will be changed, obviously, but you've gotta build before you paint.
 
@@ -17,5 +17,16 @@ This will place you inside the mother folder. Once inside this folder, type the 
 c:\mother>python mother.py
 
 The game will launch. Please send any feedback to support@symbiotic.love! You can pre-order here -> https://shop.symbiotic.love/collections/our-games
+
+If you would like to create a .bat file to launch the game with a click, you can:
+
+1. Open a text editor, like Note or Wordpad.
+2. Copy and paste this into the document. Be sure to replace "path to folder" with the file path to the folder containing the game
+@echo off
+cd /d [PATH TO FOLDER]
+python mother.py
+pause
+3. Click file and save as, and save this item on the desktop. In the dropdown that likely says .txt, select "all files" instead and name the file "Mother.bat" with the quotation marks.
+4. If you did everything correctly, your desktop icon should open your cmd terminal, navigate to the folder, and run the program. Message support@symbiotic.love with any questions and we'll try to get you sorted out!
 
 This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
