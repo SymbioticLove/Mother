@@ -2,7 +2,7 @@ Welcome to my ongoing project to create THE definitive text adventure. With hand
 
 Currently, the only output is to the cmd prompt opened with the game. You will need to type commands into the console in the game, and the results will be printed to the external cmd prompt. This will be changed, obviously, but you've gotta build before you paint.
 
-The background variable "morality" will control many of the available options and brances, as well as myriad other factors. This game should ultimately provide many, many hours of satisfying reveals and twists that you either didn't expect or will not be able to reliably recreate.
+The background variable "morality" will control many of the available options and branches, as well as myriad other factors. This game should ultimately provide many, many hours of satisfying reveals and twists that you either didn't expect or will not be able to reliably recreate.
 
 Each run through is it's own run, informed only by the knowledge of your previous attempts. To truly find everything this game has to offer should take 10s, if not hundreds, of playthroughs.
 
