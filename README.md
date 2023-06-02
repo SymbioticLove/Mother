@@ -21,12 +21,13 @@ The game will launch. Please send any feedback to support@symbiotic.love! You ca
 If you would like to create a .bat file to launch the game with a click, you can:
 
 1. Open a text editor, like Note or Wordpad.
-2. Copy and paste this into the document. Be sure to replace "path to folder" with the file path to the folder containing the game 
+2. Copy and paste what is underneath these instructions into the document. Be sure to replace "path to folder" with the file path to the folder containing the game 
+3. Click file and save as, and save this item on the desktop. In the dropdown that likely says .txt, select "all files" instead and name the file "Mother.bat" with the quotation marks.
+4. If you did everything correctly, your desktop icon should open your cmd terminal, navigate to the folder, and run the program. Message support@symbiotic.love with any questions and we'll try to get you sorted out!
+
             @echo off
             cd /d [PATH TO FOLDER]
             python mother.py
             pause
-3. Click file and save as, and save this item on the desktop. In the dropdown that likely says .txt, select "all files" instead and name the file "Mother.bat" with the quotation marks.
-4. If you did everything correctly, your desktop icon should open your cmd terminal, navigate to the folder, and run the program. Message support@symbiotic.love with any questions and we'll try to get you sorted out!
-
+            
 This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
