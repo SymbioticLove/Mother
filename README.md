@@ -6,7 +6,7 @@ Currently, the only output is to the cmd prompt opened with the game. You will n
 
 The background variable "morality" will control many of the available options and branches, as well as myriad other factors. This game should ultimately provide many, many hours of satisfying reveals and twists that you either didn't expect or will not be able to reliably recreate.
 
-Each run through is it's own run, informed only by the knowledge of your previous attempts. To truly find everything this game has to offer should take 10s, if not hundreds, of playthroughs.
+Each run through is it's own, informed only by the knowledge of your previous attempts. To truly find everything this game has to offer should take 10s, if not hundreds, of playthroughs.
 
 If you'd like to run the game for yourself right now, you'll need to install Python and Pygame. Instructions can be found here -> https://chat.openai.com/share/ebf921f5-262c-4eb3-b896-d67c0a6cbeb2
 
@@ -31,7 +31,9 @@ If you would like to create a .bat file to launch the game with a click, you can
             cd /d [PATH TO FOLDER]
             python mother.py
             pause
-            
+<h2>A note on sizing for smaller screens!</h2>
+If you are on a screen that is smaller than 1080px in either direction, the current size will be entirely too large. If you open the mother.py file in any text editor and go to lines #7 and #8, you'll see "height" and "width". Change these both to 624. The text and images on the screen will not appear properly in this sizing yet, but the game will be functional and will not be larger than your screen. Technically, you can change these numbers to whatever you want. Not responsible for odd results.
+
 This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
 <h2>Developer Console Commands</h2>
 If you need others, they can be added! All developer commands are case-sensitive and must be typed in ALL CAPS.
