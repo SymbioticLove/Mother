@@ -36,28 +36,29 @@ If you are on a screen that is smaller than 1080px in either direction, the curr
 
 <h2>Developer Console Commands</h2>
 If you need others, they can be added! All developer commands are case-sensitive and must be typed in ALL CAPS.
-<div>HEALTH = Check health</div>
-
-<div>MORAL = Check morality</div>
-
-<div>M25/M50/M75/M100 = Set morality to 25/50/75/100</div>
-
-<div>+10HP = Add 10 hp</div>
-
-<div>-10HP = Subtract 10 hp</div>
-
-<div>SHARPEN = Sharpen Knife</div>
-
-<div>DEATHWISH = Activate death wish (hard) mode</div>
-
-<div>SCENEA = Go to opening scene</div>
-
-<div>SCENEF = Go to house inside opening scene</div>
-
-<div>SCENEE = Go to ruins scene (reached by typing "go south" from opening)</div>
-
-<div>9MM = Get 9mm pistol and 25 9mm bullets</div>
-
-<div>STICKS = Get all sticks</div>
+<div>&nbsp</div>
+<strong>HEALTH</strong> = <em>Check health</em>
+<div>&nbsp</div>
+<strong>MORAL</strong> = <em>Check morality</em>
+<div>&nbsp</div>
+<strong>M25/M50/M75/M100</strong> = <em>Set morality to 25/50/75/100</em>
+<div>&nbsp</div>
+<strong>+10HP</strong> = <em>Add 10 hp</em>
+<div>&nbsp</div>
+<strong>-10HP</strong> = <em>Subtract 10 hp</em>
+<div>&nbsp</div>
+<strong>SHARPEN</strong> = <em>Sharpen Knife</em>
+<div>&nbsp</div>
+<strong>DEATHWISH</strong> = <em>Activate death wish (hard) mode</em>
+<div>&nbsp</div>
+<strong>SCENEA</strong> = <em>Go to opening scene</em>
+<div>&nbsp</div>
+<strong>SCENEF</strong> = <em>Go to house inside opening scene</em>
+<div>&nbsp</div>
+<strong>SCENEE</strong> = <em>Go to ruins scene (reached by typing "go south" from opening)</em>
+<div>&nbsp</div>
+<strong>9MM</strong> = <em>Get 9mm pistol and 25 9mm bullets</em>
+<div>&nbsp</div>
+<strong>STICKS</strong> = <em>Get all sticks</em>
 
 This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
