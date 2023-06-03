@@ -34,18 +34,30 @@ If you would like to create a .bat file to launch the game with a click, you can
 <h2>A note on sizing for smaller screens!</h2>
 If you are on a screen that is smaller than 1080px in either direction, the current size will be entirely too large. If you open the mother.py file in any text editor and go to lines #7 and #8, you'll see "height" and "width". Change these both to 624. The text and images on the screen will not appear properly in this sizing yet, but the game will be functional and will not be larger than your screen. Technically, you can change these numbers to whatever you want. Not responsible for odd results.
 
-This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
 <h2>Developer Console Commands</h2>
 If you need others, they can be added! All developer commands are case-sensitive and must be typed in ALL CAPS.
 <div>HEALTH = Check health</div>
+
 <div>MORAL = Check morality</div>
+
 <div>M25/M50/M75/M100 = Set morality to 25/50/75/100</div>
+
 <div>+10HP = Add 10 hp</div>
+
 <div>-10HP = Subtract 10 hp</div>
+
 <div>SHARPEN = Sharpen Knife</div>
+
 <div>DEATHWISH = Activate death wish (hard) mode</div>
+
 <div>SCENEA = Go to opening scene</div>
+
 <div>SCENEF = Go to house inside opening scene</div>
+
 <div>SCENEE = Go to ruins scene (reached by typing "go south" from opening)</div>
+
 <div>9MM = Get 9mm pistol and 25 9mm bullets</div>
+
 <div>STICKS = Get all sticks</div>
+
+This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
