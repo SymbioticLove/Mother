@@ -10,7 +10,7 @@ Each run through is it's own run, informed only by the knowledge of your previou
 
 If you'd like to run the game for yourself right now, you'll need to install Python and Pygame. Instructions can be found here -> https://chat.openai.com/share/ebf921f5-262c-4eb3-b896-d67c0a6cbeb2
 
-Be sure to create a new folder somewhere to hold everything within the repository. It all must be together. To run this program, open a cmd prompt and navigate to the folder you created using the "cd" (change directory) command:
+Be sure to create a new folder somewhere to hold everything within the repository. It all must be together. To run this program, open a cmd prompt and navigate to the folder you created using the "cd" (change directory) command. In this example, the folder I created is called "mother" and is located directly in my C drive:
 
 cd c:\mother
 
