@@ -16,7 +16,7 @@ Be sure to create a new folder somewhere to hold everything within the repositor
 
 This will place you inside the mother folder. Once inside this folder, type the command "python mother.py"
 
-            c:\mother>python mother.py
+            python mother.py
 
 The game will launch. Please send any feedback to support@symbiotic.love! You can pre-order here -> https://shop.symbiotic.love/collections/our-games
 
