@@ -34,6 +34,20 @@ If you would like to create a .bat file to launch the game with a click, you can
 <h2>A note on sizing for smaller screens!</h2>
 If you are on a screen that is smaller than 1080px in either direction, the current size will be entirely too large. If you open the mother.py file in any text editor and go to lines #7 and #8, you'll see "height" and "width". Change these both to 624. The text and images on the screen will not appear properly in this sizing yet, but the game will be functional and will not be larger than your screen. Technically, you can change these numbers to whatever you want. Not responsible for odd results.
 
+<h2>Available Scenes with coded actions</h2>
+SceneA - The opening scene of the game
+<div>&nbsp</div>
+SceneF - The scene that is inside the house of the main scene
+<div>&nbsp</div>
+SceneE - Ruins - reached via "go south" from SceneA
+<h2>Scenes available but without actions</h2>
+SceneC - Clearing - reached via "go west" from SceneA
+<div>&nbsp</div>
+SceneB - (picture not final) Reached via "go north" from SceneA
+<div>&nbsp</div>
+SceneD - (picture not final) Reached via "go east" from SceneA
+<h2>Trello board</h2>
+https://trello.com/b/REYwEncA/gameplay
 <h2>Developer Console Commands</h2>
 If you need others, they can be added! All developer commands are case-sensitive and must be typed in ALL CAPS.
 <div>&nbsp</div>
