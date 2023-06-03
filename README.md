@@ -41,7 +41,7 @@ If you need others, they can be added! All developer commands are case-sensitive
 <div>+10HP = Add 10 hp</div>
 <div>-10HP = Subtract 10 hp</div>
 <div>SHARPEN = Sharpen Knife</div>
-<div>DEATHWISH = Activate deathwish (hard) mode</div>
+<div>DEATHWISH = Activate death wish (hard) mode</div>
 <div>SCENEA = Go to opening scene</div>
 <div>SCENEF = Go to house inside opening scene</div>
 <div>SCENEE = Go to ruins scene (reached by typing "go south" from opening)</div>
