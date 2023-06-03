@@ -60,5 +60,5 @@ If you need others, they can be added! All developer commands are case-sensitive
 <strong>9MM</strong> = <em>Get 9mm pistol and 25 9mm bullets</em>
 <div>&nbsp</div>
 <strong>STICKS</strong> = <em>Get all sticks</em>
-
+<div>&nbsp</div>
 This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
