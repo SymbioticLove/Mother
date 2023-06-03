@@ -1,1 +1,0 @@
-When the command "smash rock" is entered, a variable called "has_geode" should become true, an item called "Brilliant Geode" should be included in the inventory if "has_geode" is true.
