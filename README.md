@@ -12,11 +12,11 @@ If you'd like to run the game for yourself right now, you'll need to install Pyt
 
 Be sure to create a new folder somewhere to hold everything within the repository. It all must be together. To run this program, open a cmd prompt and navigate to the folder you created using the "cd" (change directory) command. In this example, the folder I created is called "mother" and is located directly in my C drive:
 
-cd c:\mother
+            cd c:\mother
 
 This will place you inside the mother folder. Once inside this folder, type the command "python mother.py"
 
-c:\mother>python mother.py
+            c:\mother>python mother.py
 
 The game will launch. Please send any feedback to support@symbiotic.love! You can pre-order here -> https://shop.symbiotic.love/collections/our-games
 
