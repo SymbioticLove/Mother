@@ -35,15 +35,15 @@ If you would like to create a .bat file to launch the game with a click, you can
 This game is posted here as a free test version. It is copyrighted, and may not be re-distributed or used in any capacity other than for testing and critique.
 <h2>Developer Console Commands</h2>
 If you need others, they can be added! All developer commands are case-sensitive and must be typed in ALL CAPS.
-1. HEALTH = Check health
-2. MORAL = Check morality
-3. M25/M50/M75/M100 = Set morality to 25/50/75/100
-4. +10HP = Add 10 hp
-5. -10HP = Subtract 10 hp
-6. SHARPEN = Sharpen Knife
-7. DEATHWISH = Activate deathwish (hard) mode
-8. SCENEA = Go to opening scene
-9. SCENEF = Go to house inside opening scene
-10. SCENEE = Go to ruins scene (reached by typing "go south" from opening)
-11. 9MM = Get 9mm pistol and 25 9mm bullets
-12. STICKS = Get all sticks
+<div>HEALTH = Check health</div>
+<div>MORAL = Check morality</div>
+<div>M25/M50/M75/M100 = Set morality to 25/50/75/100</div>
+<div>+10HP = Add 10 hp</div>
+<div>-10HP = Subtract 10 hp</div>
+<div>SHARPEN = Sharpen Knife</div>
+<div>DEATHWISH = Activate deathwish (hard) mode</div>
+<div>SCENEA = Go to opening scene</div>
+<div>SCENEF = Go to house inside opening scene</div>
+<div>SCENEE = Go to ruins scene (reached by typing "go south" from opening)</div>
+<div>9MM = Get 9mm pistol and 25 9mm bullets</div>
+<div>STICKS = Get all sticks</div>
