@@ -4,8 +4,8 @@ import os
 import time
 
 # Define the width and height of the square box
-width = 624 # 624
-height = 624 # 624
+width = 1024 # 624 for smaller screens
+height = 1024 # 624 for smaller screens
 
 # Define the duration of the fade-in effects
 image_fade_duration = 4500  # in milliseconds
