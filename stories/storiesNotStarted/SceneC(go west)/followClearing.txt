@@ -1,0 +1,1 @@
+The player should have an option to follow the clearing. If their morality is higher than 40, they should find water and take a drink, which will restore 5 health. If it is lower than or equal to 40, they should instead find a dry riverbed. In the dry riverbed, the player should see something that can be dug. (can_dig1 = True).

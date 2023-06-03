@@ -1,0 +1,1 @@
+A player should be able to approach the ruins. If they have not explored and found the key, they should find a keyhole. If they have found the key, a variable called "can_enter_ruins" should be changed to True which enables a new console command to be used, "enter ruins".

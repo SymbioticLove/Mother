@@ -4,8 +4,8 @@ import os
 import time
 
 # Define the width and height of the square box
-width = 1024 # 624
-height = 1024 # 624
+width = 624 # 624
+height = 624 # 624
 
 # Define the duration of the fade-in effects
 image_fade_duration = 4500  # in milliseconds
@@ -175,11 +175,15 @@ can_throw_stick = False
 stick_thrown_once = False
 stick_thrown_twice = False
 stick_thrown_thrice = False
+has_hair_knowledge = False
+rock1_looked_under = False
+poisoned = False
 deathwish = False
 deathwish_on = False
 has_rock = False
 has_geode = False
 item_in_SceneE_tree = True
+can_enter_ruins = False
 b9mm_ammo = 0
 b40_ammo = 0
 b22lr_ammo = 0
@@ -371,7 +375,7 @@ while running:
             "Odd Key" if has_key1 else "",
             "A DEATHWISH" if deathwish_on else "",
             "A Rock" if has_rock else "",
-            "A Brilliant Geode!" if has_geode else "",
+            "A Brilliant Geode" if has_geode else "",
         ]
         
         if b9mm_ammo > 0:
@@ -390,15 +394,16 @@ while running:
 
         # Universal commands
         universal_commands = [
-        "Explore" if not area_explored or not house1_explored else "",
+        "Explore" if not area_explored or house1_explored else "",
         "Items",
         "Snack" if has_snack else "",
         "Eat" if has_food else "",
-        "Read Mysterious Note" if has_note_from_mom else "",
+        "Read Note" if has_note else "",
         "Check Battery" if has_phone else "",
         "Sharpen Stick" if has_stick else "",
         "Sharpen Stick" if has_sharp_stick else "",
-        "Fire 9mm" if has_9mm_pistol and b9mm_ammo > 0 else ""
+        "Fire 9mm" if has_9mm_pistol and b9mm_ammo > 0 else "",
+        "View Geode" if has_geode else ""
         ]
         universal_commands = [command for command in universal_commands if command != ""]
 
@@ -416,8 +421,9 @@ while running:
 
         # SceneE Commands (Ruins - "go south")
         SceneE_commands = [
-        "Throw Stick" if can_throw_stick else "",
-        "Shoot Object" if can_shoot1 else "",
+        "Throw Stick" if can_throw_stick and not deathwish_on else "",
+        "Shoot Object" if can_shoot1 and b9mm_ammo > 0 else "",
+        "Look Under Rock" if not rock1_looked_under and area_explored else "",
         ]
         SceneE_commands = [command for command in SceneE_commands if command != ""]
         SceneE_hidden_commands = [
@@ -479,13 +485,21 @@ while running:
                         if console_input == "SHARPEN":
                             knife_sharp = True
                             print("Knife sharpened.")
+                        elif console_input == "DEATHWISH":
+                            deathwish_on = True
+                            print("Deathwish mode activated")
                         # Go to SceneA
                         elif console_input == "SCENEA":
                             print("Going to SceneA... ")
                             background_filename = background_main_game_filenames[0]
+                        # Go to SceneE
                         elif console_input == "SCENEE":
                             print("Going to SceneE")
                             background_filename = background_main_game_filenames[4]
+                        # Go to SceneC
+                        elif console_input == "SCENEC":
+                            print("Going to SceneC")
+                            background_filename = background_main_game_filenames[2]
                         # Display current morality
                         elif console_input == "MORAL":
                             print(f"Current morality: {morality}")
@@ -516,10 +530,12 @@ while running:
                         elif console_input == "9MM":
                             has_9mm_pistol = True
                             b9mm_ammo += 25
+                            print("Gun and 25 9mm bullets added.")
                         elif console_input == "STICKS":
                             has_stick = True
                             has_sharp_stick = True
                             has_double_sharp_stick = True
+                            print("All sticks added.")
 
                         # Permanent console commands
 
@@ -658,7 +674,7 @@ while running:
                                     elif morality < 50:
                                         print("You give in to curiosity and rummage around the room...")
                                         time.sleep(4)
-                                        print("You find a strange statue that calls to you as well as a 'pickinick' basket that would make Yogi Bear blush. Since you've already entered uninvited and rummaged through this person's things, you don't think much of taking these, either.")
+                                        print("You find a strange statue that calls to you as well as a tasty lunch and a thick book. Since you've already entered uninvited and rummaged through this person's things, you don't think much of taking these, either.")
                                         has_statue = True
                                         has_food = True
                                         house1_explored = True
@@ -681,9 +697,9 @@ while running:
                                     print("The only book had a gun in it and you already took it, remember?")
                                 elif not has_9mm_pistol:
                                     if not book1_read:
-                                        print("Seeking enlightenment, you look for a book to read.")
+                                        print("Seeking enlightenment, you pick up the book.")
                                         time.sleep(2)
-                                        print("You find one single book, with no title.")
+                                        print("It's dusty and has no title.")
                                         time.sleep(1)
                                         print("You open the book to read...")
                                         time.sleep(1)
@@ -725,7 +741,7 @@ while running:
                                 if not area_explored:
                                     print("You search around the ruins...")
                                     time.sleep(3)
-                                    print("You find some sort of key. You tuck it away. Your pockets are really big.")
+                                    print("You find some sort of key, and you notice a giant rock. You tuck the key away. Your pockets are really big.")
                                     time.sleep(2)
                                     print("Look, suspend your disbelief here. It's my first project.")
                                     has_key1 = True
@@ -835,7 +851,68 @@ while running:
                                         elif morality <= 35:
                                             print("The item turns out to be a rock. Which you leave on the ground.")
                                 elif b9mm_ammo == 0:
-                                    print("You have no bullets.")    
+                                    print("You have no bullets.")
+                            # "approach ruins" - Approach the ruins
+                            elif console_input.lower() == "approach ruins" and not can_enter_ruins:
+                                if not has_key1:
+                                    print("You approach the ruins...")
+                                    time.sleep(2)
+                                    print("You look along the walls and notice a keyhole in a crevice.")
+                                if has_key1:
+                                    print("You approach the ruins...")
+                                    time.sleep(2)
+                                    print("You find a place that your key fits!")
+                                    time.sleep(2)
+                                    print("Your key works and the doors crack ajar. Enter if you dare.")
+                                    can_enter_ruins = True
+                            # "smash rock" - Smash the rock open
+                            elif console_input.lower() == "smash rock" and has_rock:
+                                print("You look around for some way to smash open the rock...")
+                                time.sleep(2)
+                                print("You decide to smash it against the walls of the ruins.")
+                                time.sleep(2)
+                                print("The rock splits open quite easily, and inside is revealed to be a beautiful violet geode!")
+                                has_geode = True
+                                has_rock = False
+                            # "view geode" - View the geode
+                            elif console_input.lower() == "view geode" and has_geode:
+                                if not has_hair_knowledge:
+                                    print("As you look at the geode, you suddenly remember a flash of your mother's deep, violet hair.")
+                                    morality += 5
+                                    time.sleep(2)
+                                    print("You feel a rush of self-assurance.")
+                                    has_hair_knowledge = True
+                                elif has_hair_knowledge:
+                                    print("You contemplate the geode once again.")
+                                    morality += 2
+                                    time.sleep(3)
+                                    print("You feel assured and confident.")
+                            # "look under rock" - Look under the rock
+                            elif console_input.lower() == "look under rock" and not rock1_looked_under and area_explored:
+                                if deathwish_on:
+                                    print("(dw) You lift up the rock to look under it...")
+                                    time.sleep(2)
+                                    print("And out hops a black scorpion the size of a small dog!")
+                                    time.sleep(2)
+                                    print("You try to avoid it, but it's much faster than you and manages to sting your hand.")
+                                    time.sleep(2)
+                                    print("You're not sure what kind of scorpion it was, but your vision begins to go dark and you fall over.")
+                                    time.sleep(2)
+                                    print("Your death comes quite soon after.")
+                                    health = 0
+                                elif not deathwish_on:
+                                    print("You lift up the rock to look under it...")
+                                    time.sleep(2)
+                                    print("And out hops a small scorpion!")
+                                    time.sleep(2)
+                                    print("You try to avoid it, but it's much faster than you and manages to land a sting on your hand.")
+                                    time.sleep(2)
+                                    print("Your hand is numb, but you're pretty sure that you'll be fine.")
+                                    health -= 3
+                                    time.sleep(1)
+                                    print(f"You have {health} remaining.")
+                                    poisoned = True
+                                    rock1_looked_under = True
 
                         # SceneD events
 
@@ -988,7 +1065,7 @@ while running:
                                     time.sleep(3)
                                     print("Lose 3 health for trying to chasing Bambi (or trying to chase Bambi again)!")
                                     health -= 3
-                                    print(f"You have {health} remaining.")
+                                    print(f"You have {health} health remaining.")
                             # "approach deer slowly" - Approach the deer slowly
                             elif console_input.lower() == "approach deer slowly":
                                 if deer_present:
@@ -1006,8 +1083,7 @@ while running:
                                 elif not deer_present:
                                     print("The deer are all gone!")
                             # "pick a tulip" - Pick a tulip
-                            elif console_input.lower() == "pick a tulip":
-                                if has_flower_knowledge:
+                            elif console_input.lower() == "pick a tulip" and has_flower_knowledge:
                                     if not has_tulip:
                                         print("You walk over to the tulips...")
                                         time.sleep(3)

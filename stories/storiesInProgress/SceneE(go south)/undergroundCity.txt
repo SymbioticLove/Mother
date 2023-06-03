@@ -1,0 +1,1 @@
+There should be another option to exit this scene besides entering the ruins. There should be an underground city that appears to be a hole in the ground, which the player can choose to enter. It should appear to be a non-descript, but large, hole. It can be walked into, the ground slants downard at a 45 degree angle or so.

@@ -1,0 +1,1 @@
+If the variable can_enter_ruins is true, the player should be able to enter the ruins. If their morality is equal to or above 50, the transition should lead to somewhere bright and themed around white whitchcraft and magic. If morality is under 50, the transition should lead to a dark underground city, themed around black witchcraft.
