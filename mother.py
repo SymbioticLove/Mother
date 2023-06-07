@@ -4,8 +4,8 @@ import os
 import time
 
 # Define the width and height of the square box
-width = 1024 # 624 for smaller screens
-height = 1024 # 624 for smaller screens
+width = 1024 # 624
+height = 1024 # 624
 
 # Define the duration of the fade-in effects
 image_fade_duration = 4500  # in milliseconds
@@ -102,7 +102,7 @@ line_elapsed_time = 0  # Elapsed time for each line fade-in effect
 # Define the filenames for the background images
 background_menu_filename = "Background.png"
 background_instructions_filename = "Background2.png"
-background_main_game_filenames = ["SceneA.png", "SceneB.png", "SceneC.png", "SceneD.png", "SceneE.png", "SceneF.png",]
+background_main_game_filenames = ["SceneA.png", "SceneB.png", "SceneC.png", "SceneD.png", "SceneE.png", "SceneF.png", "SceneG.png", "SceneH.png"]
 
 # Prevent repeated commands
 initialized_state = False
@@ -149,21 +149,21 @@ has_double_sharp_stick = False
 has_food = False
 has_knife = True
 knife_sharp = True
-has_hand_axe = False
-has_fire_axe = False
-has_lighter = True
+has_hand_axe = False #
+has_fire_axe = False #
+has_lighter = True #
 has_phone = True
-has_charging_cable = False
-has_electricity = False
-phone_battery_charged = False
-has_credit_card = True
+has_charging_cable = False #
+has_electricity = False #
+phone_battery_charged = False #
+has_credit_card = True #
 has_9mm_pistol = False
-has_40_pistol = False
-has_rifle = False
-has_shotgun = False
-has_statue = False
+has_40_pistol = False #
+has_rifle = False #
+has_shotgun = False #
+has_statue = False #
 has_key1 = False
-has_car_keys = False
+has_car_keys = False #
 deer_present = True
 has_flower_knowledge = False
 has_tulip = False
@@ -175,20 +175,28 @@ can_throw_stick = False
 stick_thrown_once = False
 stick_thrown_twice = False
 stick_thrown_thrice = False
-has_hair_knowledge = False
+has_hair_knowledge = False #
+can_go_underground = False
 rock1_looked_under = False
-poisoned = False
+has_tree_note = False
+has_nail = False
+arm_injured = False #
+poisoned = False #
 deathwish = False
 deathwish_on = False
+hole_checked = False
 has_rock = False
 has_geode = False
 item_in_SceneE_tree = True
-can_enter_ruins = False
+sceneC_tree_climbed = False
+can_climb_c_tree = False
+can_enter_ruins = False #
+appreciates_arch = False #
 b9mm_ammo = 0
-b40_ammo = 0
-b22lr_ammo = 0
-bbirdshot_ammo = 0
-bslug_ammo = 0
+b40_ammo = 0 #
+b22lr_ammo = 0 #
+bbirdshot_ammo = 0 #
+bslug_ammo = 0 #
 
 while running:
     # Menu event handler
@@ -376,6 +384,8 @@ while running:
             "A DEATHWISH" if deathwish_on else "",
             "A Rock" if has_rock else "",
             "A Brilliant Geode" if has_geode else "",
+            "A Rusty Nail" if has_nail else "",
+            "Tree Note" if has_tree_note else "",
         ]
         
         if b9mm_ammo > 0:
@@ -394,11 +404,11 @@ while running:
 
         # Universal commands
         universal_commands = [
-        "Explore" if not area_explored or house1_explored else "",
+        "Explore" if not area_explored and background_filename != background_main_game_filenames[5] else "",
         "Items",
         "Snack" if has_snack else "",
         "Eat" if has_food else "",
-        "Read Note" if has_note else "",
+        "Read Note" if has_note_from_mom else "",
         "Check Battery" if has_phone else "",
         "Sharpen Stick" if has_stick else "",
         "Sharpen Stick" if has_sharp_stick else "",
@@ -419,19 +429,35 @@ while running:
         "__ck _ T___p" if not has_tulip else "Completed!",
         ]
 
+        #SceneC Commands (Clearing with hut - "go west")
+        SceneC_commands = [
+        "Climb tree" if can_climb_c_tree else "",
+        "Investigate" if not has_tree_note else "",
+        ]
+        SceneC_commands = [command for command in SceneC_commands if command != ""]
+        SceneC_hidden_commands = [
+
+        ]
+
         # SceneE Commands (Ruins - "go south")
         SceneE_commands = [
         "Throw Stick" if can_throw_stick and not deathwish_on else "",
-        "Shoot Object" if can_shoot1 and b9mm_ammo > 0 else "",
-        "Look Under Rock" if not rock1_looked_under and area_explored else "",
+        "Shoot Object" if can_shoot1 and b9mm_ammo > 0 and item_in_SceneE_tree else "",
+        "Look Under Rock" if area_explored and not rock1_looked_under else "",
+        "Enter Ruins" if can_enter_ruins else "",
+        "Check Hole" if area_explored else "",
+        "Enter Hole" if can_go_underground else "",
+        "Approach Ruins" if not can_enter_ruins else "",
         ]
         SceneE_commands = [command for command in SceneE_commands if command != ""]
         SceneE_hidden_commands = [
         "__as_ _o_k" if not has_geode else "Completed!",
+        "V__w __in_" if not appreciates_arch else "Completed!"
         ]
 
         # SceneF Commands (inside opening house)
         SceneF_commands = [
+        "Search" if not house1_explored else "",
         "Leave",
         "Rest"
         ]
@@ -664,7 +690,7 @@ while running:
                                 background_image.set_alpha(SceneA_background_alpha)
                                 window.blit(background_image, (0, 0))
                             # "explore" - Search the house
-                            elif console_input.lower() == "explore":
+                            elif console_input.lower() == "search":
                                 if not house1_explored:
                                     if morality >= 50:
                                         print("You're too morally righteous to go through a stranger's things!")
@@ -674,7 +700,9 @@ while running:
                                     elif morality < 50:
                                         print("You give in to curiosity and rummage around the room...")
                                         time.sleep(4)
-                                        print("You find a strange statue that calls to you as well as a tasty lunch and a thick book. Since you've already entered uninvited and rummaged through this person's things, you don't think much of taking these, either.")
+                                        print("You find a strange statue that calls to you as well as a tasty lunch and a thick book. You don't think much of taking the lunch, and you feel like you MUST take the statue.")
+                                        time.sleep(2)
+                                        print("The book looks interesting to read.")
                                         has_statue = True
                                         has_food = True
                                         house1_explored = True
@@ -741,7 +769,7 @@ while running:
                                 if not area_explored:
                                     print("You search around the ruins...")
                                     time.sleep(3)
-                                    print("You find some sort of key, and you notice a giant rock. You tuck the key away. Your pockets are really big.")
+                                    print("You find some sort of key, and you notice a giant rock. You also notice a gigantic hole beyond the ruins. You tuck the key away. Your pockets are really big.")
                                     time.sleep(2)
                                     print("Look, suspend your disbelief here. It's my first project.")
                                     has_key1 = True
@@ -754,8 +782,6 @@ while running:
                                         health -= 2
                                         time.sleep(2)
                                         print(f"You have {health} health remaining.")
-                                    elif not has_double_sharp_stick:
-                                        pass
                                     if has_9mm_pistol:
                                         time.sleep(2)
                                         print("You see something hanging from a nearby tree. You walk over to get a better look.")
@@ -773,7 +799,7 @@ while running:
                                             time.sleep(2)
                                             print("Whatever it is, it's very high. You could try throwing your stick at it!")
                                             can_throw_stick = True
-                                        elif not has_stick or has_sharp_stick or has_double_sharp_stick:
+                                        elif can_throw_stick and not has_stick or has_sharp_stick or has_double_sharp_stick:
                                             time.sleep(1)
                                             print("Whatever it is, it's way too high to get to.")
                                 elif area_explored:
@@ -910,14 +936,132 @@ while running:
                                     print("Your hand is numb, but you're pretty sure that you'll be fine.")
                                     health -= 3
                                     time.sleep(1)
-                                    print(f"You have {health} remaining.")
+                                    print(f"You have {health} health remaining.")
                                     poisoned = True
                                     rock1_looked_under = True
+                            # "view ruins" - View the ruins
+                            elif console_input.lower() == "view ruins" and not appreciates_arch:
+                                print("You take a moment to appreciate the ruins.")
+                                time.sleep(2)
+                                print("And you remember your passion for architecture!")
+                                appreciates_arch = True
+                                if deathwish_on:
+                                    time.sleep(2)
+                                    print("(dw) Suddenly, one of the pillars shifts and a large rock comes falling towards you!")
+                                    time.sleep(2)
+                                    print("You jump out of the way at the very last moment. Your arm is severly injured, maybe broken.")
+                                    arm_injured = True
+                            # "enter ruins" - Enter the ruins
+                            elif console_input.lower() == "enter ruins" and can_enter_ruins:
+                                print("You enter the darkened doorway...")
+                                time.sleep(3)
+                                # Change the background image to background_image_filenames[7]
+                                background_filename = background_main_game_filenames[7]
+                                start_time = pygame.time.get_ticks()  # Reset start time for fade-in effect
+                                # Fade-in effect for the new background image
+                                if elapsed_time >= image_fade_duration:
+                                    SceneF_background_alpha = min((elapsed_time - image_fade_duration) / image_fade_duration * 255, 255)
+                                # Clear the window
+                                window.fill((0, 0, 0))
+                                # Draw the background image onto the window surface with the current alpha value
+                                background_image.set_alpha(SceneF_background_alpha)
+                                window.blit(background_image, (0, 0))
+                                area_explored = False
+                            # "check hole" - Investigate the large hole
+                            elif console_input.lower() == "check hole" and area_explored and not hole_checked:
+                                if morality > 50:
+                                    print("You walk over to the hole...")
+                                    time.sleep(3)
+                                    print("You see that there is a path slanting downward into the hole. It is easily big enough to walk into.")
+                                    can_go_underground = True
+                                    hole_checked = True
+                                elif morality <= 50:
+                                    print("You walk over to the hole...")
+                                    time.sleep(3)
+                                    print("It looks like there was a walkable path here at one point, but it's been caved-in.")
+                                    hole_checked = True
+                            # "enter hole" - Enter underground city
+                            elif console_input.lower() == "enter hole" and can_go_underground:
+                                print("You descend into the hole...")
+                                time.sleep(2)
+                                print("It's incredibly dark. You strike up your lighter so you can see.")
+                                time.sleep(2)
+                                if poisoned:
+                                    print("Your hand stings from your scorpion sting. Maybe it was more severe than you thought.")
+                                    health -= 2
+                                    time.sleep(2)
+                                    print(f"You have {health} health remaining.")
+                                    time.sleep(2)
+                                print("After what seems like a mile of walking in the dark, you emerge into a massive underground crystal city!")
+                                time.sleep(1)
+                                # Change the background image to background_image_filenames[6]
+                                background_filename = background_main_game_filenames[6]
+                                start_time = pygame.time.get_ticks()  # Reset start time for fade-in effect
+                                # Fade-in effect for the new background image
+                                if elapsed_time >= image_fade_duration:
+                                    SceneF_background_alpha = min((elapsed_time - image_fade_duration) / image_fade_duration * 255, 255)
+                                # Clear the window
+                                window.fill((0, 0, 0))
+                                # Draw the background image onto the window surface with the current alpha value
+                                background_image.set_alpha(SceneF_background_alpha)
+                                window.blit(background_image, (0, 0))
+                                area_explored = False
+                                    
+
 
                         # SceneD events
 
                         # SceneC events
+                        elif background_filename == background_main_game_filenames[2]:
+                            # "scene/hint" - SceneC help/hints
+                            if console_input.lower() == "scene":
+                                print(f"Scene-specific commands -> {SceneC_commands}")
+                            elif console_input.lower() == "hint":
+                                print(f"Hidden scene commands -> {SceneC_hidden_commands} Play/look at the scene for clues!")
+                            # "explore" - Explore the clearing
+                            elif console_input.lower() == "explore" and not area_explored:
+                                print("You look around the clearing...")
+                                time.sleep(2)
+                                print("You notice a tree that looks easy enough to climb. Perhaps you'd get a better view from up there?")
+                                can_climb_c_tree = True
+                                area_explored = True
+                            # "climb tree" - Climb the tree
+                            elif console_input.lower() == "climb tree" and can_climb_c_tree and not sceneC_tree_climbed:
+                                if health >= 10:
+                                    print("You attempt to climb the tree...")
+                                    time.sleep(2)
+                                    print("And you successfully manage to shimmy up, despite some scratches.")
+                                    health -= 1
+                                    time.sleep(2)
+                                    print(f"You have {health} health remaining.")
+                                    time.sleep(1)
+                                    print("From your vantage point you can see a large swath of the earth cut out furhter to the west.")
+                                    time.sleep(2)
+                                    print("You also see something glinting off of another tree across the clearing.")
+                                    sceneC_tree_climbed = True
+                                elif health < 10:
+                                    print("You attempt to climb the tree...")
+                                    time.sleep(2)
+                                    print("You slip and fall. You're too weak to climb the tree.")
+                                    health -= 3
+                                    time.sleep(1)
+                                    print(f"You have {health} health remaining.")
+                                    time.sleep(2)
+                                    print("You should eat something to regain some strength before trying again.")
+                            # "investigate" - Investigate the glint
+                            elif console_input.lower() == "investigate" and sceneC_tree_climbed and not has_tree_note:
+                                print("You go to investigate whatever you saw glinting...")
+                                time.sleep(2)
+                                print("It turns out to be a nail that you saw the glint off of.")
+                                time.sleep(1)
+                                print("The nail is holding a note. You take it.")
+                                has_tree_note = True
+                                if morality >= 35:
+                                    time.sleep(2)
+                                    print("You also take the nail.")
+                                    has_nail = True
 
+                            
                         # SceneB events
                         
                         # SceneA events (Opening)
