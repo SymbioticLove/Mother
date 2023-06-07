@@ -1,5 +1,18 @@
 <h1>Pick up Your Mother</h1>
-
+<h2>6/6 Update</h2>
+<ul>
+            <li>Added more actions (as well as 2 possible exits) to the "Ruins" scene (console command SCENEE)</li>
+            <li>Debugged more currently available actions</li>
+            <li>Slightly modified the console look, as well as the way the "help" and "scenehelp" commands work</li>
+            <div>&nbsp</div>
+            <ol>
+                        <li>"help" will now display general instructions at all times</li>
+                        <li>A new command, "cmds", will now display a list of currently available global commands</li>
+                        <li>"scene" will display scene-specific commands</li>
+                        <li>"hint" will still display hidden commands, but they will now instead return "Completed!" when they are finished</li>
+            </ol>
+</ul>
+<h2>Alpha Information</h2>
 Welcome to our ongoing project to create THE definitive text adventure. With hand-drawn stylings, music composed, played and recorded by us, authentic and deep sound design as well as a brilliant interactive story.
 
 Currently, the only output is to the cmd prompt opened with the game. You will need to type commands into the console in the game, and the results will be printed to the external cmd prompt. This will be changed, obviously, but you've gotta build before you paint.
@@ -46,11 +59,13 @@ SceneC - Clearing - reached via "go west" from SceneA
 SceneB - (picture not final) Reached via "go north" from SceneA
 <div>&nbsp</div>
 SceneD - (picture not final) Reached via "go east" from SceneA
-<h2>Trello board</h2>
+<div>&nbsp</div>
 SceneG - Underground Crystal City (possible exit from Ruins Scene)
 <div>&nbsp</div>
 SceneH - Inner Ruins (possible exit from Ruins scene)
+<h2>Trello board</h2>
 https://trello.com/b/REYwEncA/gameplay
+<div>&nbsp</div>
 Anything listed under "testing" is where we need your help the most!
 <h2>Developer Console Commands</h2>
 If you need others, they can be added! All developer commands are case-sensitive and must be typed in ALL CAPS.
