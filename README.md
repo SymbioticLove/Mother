@@ -47,7 +47,11 @@ SceneB - (picture not final) Reached via "go north" from SceneA
 <div>&nbsp</div>
 SceneD - (picture not final) Reached via "go east" from SceneA
 <h2>Trello board</h2>
+SceneG - Underground Crystal City (possible exit from Ruins Scene)
+<div>&nbsp</div>
+SceneH - Inner Ruins (possible exit from Ruins scene)
 https://trello.com/b/REYwEncA/gameplay
+Anything listed under "testing" is where we need your help the most!
 <h2>Developer Console Commands</h2>
 If you need others, they can be added! All developer commands are case-sensitive and must be typed in ALL CAPS.
 <div>&nbsp</div>
