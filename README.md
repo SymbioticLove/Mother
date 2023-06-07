@@ -53,9 +53,9 @@ SceneA - The opening scene of the game
 SceneF - The scene that is inside the house of the main scene
 <div>&nbsp</div>
 SceneE - Ruins - reached via "go south" from SceneA
-<h2>Scenes available but without actions</h2>
-SceneC - Clearing - reached via "go west" from SceneA
 <div>&nbsp</div>
+SceneC - Clearing - reached via "go west" from SceneA
+<h2>Scenes available but without actions</h2>
 SceneB - (picture not final) Reached via "go north" from SceneA
 <div>&nbsp</div>
 SceneD - (picture not final) Reached via "go east" from SceneA
