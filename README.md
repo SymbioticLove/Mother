@@ -89,6 +89,8 @@ If you need others, they can be added! All developer commands are case-sensitive
 <div>&nbsp</div>
 <strong>SCENEF</strong> = <em>Go to house inside opening scene</em>
 <div>&nbsp</div>
+<strong>SCENEC</STRONG> = <EM>Go to Ruins scene ("go south" form opening)
+<div>&nbsp</div>
 <strong>SCENEE</strong> = <em>Go to ruins scene (reached by typing "go south" from opening)</em>
 <div>&nbsp</div>
 <strong>9MM</strong> = <em>Get 9mm pistol and 25 9mm bullets</em>
