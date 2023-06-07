@@ -4,7 +4,7 @@
             <li>Added more actions (as well as 2 possible exits) to the "Ruins" scene (console command SCENEE)</li>
             <li>Debugged more currently available actions</li>
             <li>Added a couple of actions to the "go west" clearing scene, but not many</li>
-            <li>Slightly modified the console look, as well as the way the "help" and "scenehelp" commands work</li>
+            <li>Slightly modified the console look, as well as the way the "help" and "scenehelp" commands work:</li>
             <div>&nbsp</div>
             <ol>
                         <li>"help" will now display general instructions at all times</li>
