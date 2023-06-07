@@ -48,7 +48,7 @@ If you would like to create a .bat file to launch the game with a click, you can
 <h2>A note on sizing for smaller screens!</h2>
 If you are on a screen that is smaller than 1080px in either direction, the current size will be entirely too large. If you open the mother.py file in any text editor and go to lines #7 and #8, you'll see "height" and "width". Change these both to 624. The text and images on the screen will not appear properly in this sizing yet, but the game will be functional and will not be larger than your screen. Technically, you can change these numbers to whatever you want. Not responsible for odd results.
 
-<h2>Available Scenes with coded actions</h2>
+<h2>Available scenes with coded actions</h2>
 SceneA - The opening scene of the game
 <div>&nbsp</div>
 SceneF - The scene that is inside the house of the main scene
